@@ -6,6 +6,13 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  const totalFeedback = good + neutral + bad
+
+  const getAverageScore = () => (totalFeedback !== 0 ? ((good * 1) + (bad * -1)) / totalFeedback : 0);
+  const getPositivePercentage = () => totalFeedback !== 0 ? ((good / totalFeedback) * 100) : 0;
+
+  console.log(isNaN(getAverageScore()))
+
   return (
     <div>
       <h1>give feedback</h1>
@@ -17,6 +24,9 @@ const App = () => {
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
+
+      <p>average {getAverageScore()}</p>
+      <p>positive {getPositivePercentage()} %</p>
     </div>
   )
 }
