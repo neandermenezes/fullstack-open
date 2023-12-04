@@ -25,7 +25,7 @@ const App = () => {
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
 
-      {<Statistics statistics={statistics} />}
+      {totalFeedback !== 0 ? <Statistics statistics={statistics} /> : <p>No feedback given</p>}
     </div>
   )
 }
