@@ -5,7 +5,7 @@ const Statistics = (props) => {
     const { statistics, good, neutral, bad } = props
 
     return (
-        <div>
+        <table>
             <StatisticsLine text="good" value={good}/>
             <StatisticsLine text="neutral" value={neutral}/>
             <StatisticsLine text="bad" value={bad}/>
@@ -13,7 +13,7 @@ const Statistics = (props) => {
             <StatisticsLine text="all" value={statistics[0]}/>
             <StatisticsLine text="average" value={statistics[1]}/>
             <StatisticsLine text="positive" value={statistics[2]}/>
-        </div>
+        </table>
     )
 }
 
