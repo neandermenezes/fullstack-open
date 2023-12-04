@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Statistics from './components/Statistics'
 
 const App = () => {
   // save clicks of each button to its own state
@@ -7,11 +8,10 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   const totalFeedback = good + neutral + bad
-
   const getAverageScore = () => (totalFeedback !== 0 ? ((good * 1) + (bad * -1)) / totalFeedback : 0);
   const getPositivePercentage = () => totalFeedback !== 0 ? ((good / totalFeedback) * 100) : 0;
 
-  console.log(isNaN(getAverageScore()))
+  const statistics = [totalFeedback, getAverageScore(), getPositivePercentage()]
 
   return (
     <div>
@@ -25,8 +25,7 @@ const App = () => {
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
 
-      <p>average {getAverageScore()}</p>
-      <p>positive {getPositivePercentage()} %</p>
+      {<Statistics statistics={statistics} />}
     </div>
   )
 }
