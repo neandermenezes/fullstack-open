@@ -15,13 +15,13 @@ const App = () => {
     <div>
       <h1>{<Header course={course} />}</h1>
       <p>
-        {<Content subject={part1} />} {<Total totalExercises={exercises1} />}
+        {<Content subject={part1} exercises={exercises1} />}
       </p>
       <p>
-        {<Content subject={part2} />} {<Total totalExercises={exercises2} />}
+      {<Content subject={part2} exercises={exercises2} />}
       </p>
       <p>
-        {<Content subject={part3} />} {<Total totalExercises={exercises3} />}
+      {<Content subject={part3} exercises={exercises3} />}
       </p>
       <p>Number of exercises {<Total totalExercises={exercises1 + exercises2 + exercises3} />}</p>
 
