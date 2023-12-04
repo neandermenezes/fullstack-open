@@ -30,8 +30,8 @@ const App = () => {
   return (
     <div>
       {<Header course={course} />}
-      {<Content subjects={[parts[0].name, parts[1].name, parts[2].name]} exercises={[parts[0].exercises, parts[1].exercises, parts[2].exercises]} />}
-      <p>Number of exercises {<Total totalExercises={parts[0].exercises + parts[1].exercises + parts[2].exercises} />}</p>
+      {<Content parts={parts} />}
+      {<Total parts={parts} />}
     </div>
   )
 }
